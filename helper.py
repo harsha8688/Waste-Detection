@@ -96,7 +96,7 @@ def _display_detected_frames(model, st_frame, image):
 
     threading.Thread(target=sleep_and_clear_success).start()
 
-    res_plotted = res[0].plot()
+    res_plotted = np.asarray(res[0].plot())  # Ensure it's a numpy array
     st_frame.image(res_plotted, channels="BGR")
 
 
